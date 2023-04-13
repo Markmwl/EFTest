@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MarkModel.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="T_EF_DEMO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NAME" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="SEX" Type="varchar2" MaxLength="2" Nullable="false" />
+          <Property Name="AGE" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TIME" Type="date" Nullable="false" />
+          <Property Name="TEXT" Type="clob" />
+        </EntityType>
+        <EntityType Name="T_SYSUSER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="number" Precision="8" Scale="0" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="nvarchar2" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_USER">
+          <Key>
+            <PropertyRef Name="VC_ID" />
+          </Key>
+          <Property Name="VC_ID" Type="varchar2" MaxLength="256" Nullable="false" />
+          <Property Name="VC_USERNAME" Type="varchar2" MaxLength="256" Nullable="false" />
+          <Property Name="VC_USERPASS" Type="varchar2" MaxLength="256" Nullable="false" />
+          <Property Name="VC_DEPNAME" Type="varchar2" MaxLength="256" />
+          <Property Name="VC_ISADMIN" Type="varchar2" MaxLength="1" Nullable="false" />
+          <Property Name="VC_CID" Type="varchar2" MaxLength="256" Nullable="false" />
+          <Property Name="D_CDATE" Type="date" Nullable="false" />
+          <Property Name="VC_MID" Type="varchar2" MaxLength="256" Nullable="false" />
+          <Property Name="D_MDATE" Type="date" Nullable="false" />
+          <Property Name="VC_ISDEL" Type="varchar2" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="XXLUSER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="SEX" Type="nvarchar2" MaxLength="2" />
+          <Property Name="AGE" Type="nvarchar2" MaxLength="3" />
+          <Property Name="ADDRESS" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PHONENUMBER" Type="nvarchar2" MaxLength="15" />
+          <Property Name="CURRENTDATE" Type="date" />
+        </EntityType>
+        <EntityType Name="用户表">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nvarchar2" MaxLength="20" Nullable="false" />
+          <Property Name="NAME" Type="nvarchar2" MaxLength="20" />
+          <Property Name="SEX" Type="nvarchar2" MaxLength="2" />
+          <Property Name="AGE" Type="nvarchar2" MaxLength="3" />
+          <Property Name="ADDRESS" Type="nvarchar2" MaxLength="50" />
+          <Property Name="PHONENUMBER" Type="nvarchar2" MaxLength="15" />
+        </EntityType>
+        <EntityContainer Name="MarkModelStoreContainer">
+          <EntitySet Name="T_EF_DEMO" EntityType="Self.T_EF_DEMO" Schema="MARK" store:Type="Tables" />
+          <EntitySet Name="T_SYSUSER" EntityType="Self.T_SYSUSER" Schema="MARK" store:Type="Tables" />
+          <EntitySet Name="T_USER" EntityType="Self.T_USER" Schema="MARK" store:Type="Tables" />
+          <EntitySet Name="XXLUSER" EntityType="Self.XXLUSER" Schema="MARK" store:Type="Tables" />
+          <EntitySet Name="用户表" EntityType="Self.用户表" Schema="MARK" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MarkModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="T_SYSUSER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_USER">
+          <Key>
+            <PropertyRef Name="VC_ID" />
+          </Key>
+          <Property Name="VC_ID" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VC_USERNAME" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VC_USERPASS" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VC_DEPNAME" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+          <Property Name="VC_ISADMIN" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VC_CID" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="D_CDATE" Type="DateTime" Nullable="false" />
+          <Property Name="VC_MID" Type="String" MaxLength="256" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="D_MDATE" Type="DateTime" Nullable="false" />
+          <Property Name="VC_ISDEL" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="XXLUSER">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SEX" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="AGE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONENUMBER" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CURRENTDATE" Type="DateTime" />
+        </EntityType>
+        <EntityContainer Name="MarkConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_SYSUSER" EntityType="Self.T_SYSUSER" />
+          <EntitySet Name="T_USER" EntityType="Self.T_USER" />
+          <EntitySet Name="XXLUSER" EntityType="Self.XXLUSER" />
+          <EntitySet Name="用户表" EntityType="MarkModel.用户表" />
+          <EntitySet Name="T_EF_DEMO" EntityType="MarkModel.T_EF_DEMO" />
+        </EntityContainer>
+        <EntityType Name="用户表">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SEX" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="AGE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PHONENUMBER" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_EF_DEMO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SEX" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="AGE" Type="Decimal" Nullable="false" Precision="38" Scale="0" />
+          <Property Name="TIME" Type="DateTime" Nullable="false" />
+          <Property Name="TEXT" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MarkModelStoreContainer" CdmEntityContainer="MarkConnection">
+          <EntitySetMapping Name="T_SYSUSER">
+            <EntityTypeMapping TypeName="MarkModel.T_SYSUSER">
+              <MappingFragment StoreEntitySet="T_SYSUSER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_USER">
+            <EntityTypeMapping TypeName="MarkModel.T_USER">
+              <MappingFragment StoreEntitySet="T_USER">
+                <ScalarProperty Name="VC_ID" ColumnName="VC_ID" />
+                <ScalarProperty Name="VC_USERNAME" ColumnName="VC_USERNAME" />
+                <ScalarProperty Name="VC_USERPASS" ColumnName="VC_USERPASS" />
+                <ScalarProperty Name="VC_DEPNAME" ColumnName="VC_DEPNAME" />
+                <ScalarProperty Name="VC_ISADMIN" ColumnName="VC_ISADMIN" />
+                <ScalarProperty Name="VC_CID" ColumnName="VC_CID" />
+                <ScalarProperty Name="D_CDATE" ColumnName="D_CDATE" />
+                <ScalarProperty Name="VC_MID" ColumnName="VC_MID" />
+                <ScalarProperty Name="D_MDATE" ColumnName="D_MDATE" />
+                <ScalarProperty Name="VC_ISDEL" ColumnName="VC_ISDEL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XXLUSER">
+            <EntityTypeMapping TypeName="MarkModel.XXLUSER">
+              <MappingFragment StoreEntitySet="XXLUSER">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="PHONENUMBER" ColumnName="PHONENUMBER" />
+                <ScalarProperty Name="CURRENTDATE" ColumnName="CURRENTDATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="用户表">
+            <EntityTypeMapping TypeName="MarkModel.用户表">
+              <MappingFragment StoreEntitySet="用户表">
+                <ScalarProperty Name="PHONENUMBER" ColumnName="PHONENUMBER" />
+                <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_EF_DEMO">
+            <EntityTypeMapping TypeName="MarkModel.T_EF_DEMO">
+              <MappingFragment StoreEntitySet="T_EF_DEMO">
+                <ScalarProperty Name="TEXT" ColumnName="TEXT" />
+                <ScalarProperty Name="TIME" ColumnName="TIME" />
+                <ScalarProperty Name="AGE" ColumnName="AGE" />
+                <ScalarProperty Name="SEX" ColumnName="SEX" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1169
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCodefrist", "EFTest\EFCodefrist.csproj", "{02331183-92EE-4798-8F07-82594EA19C6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFDesigner", "EFDesigner\EFDesigner.csproj", "{489F2F3D-235C-480A-B0DB-7FB02AFEDEBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02331183-92EE-4798-8F07-82594EA19C6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02331183-92EE-4798-8F07-82594EA19C6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02331183-92EE-4798-8F07-82594EA19C6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02331183-92EE-4798-8F07-82594EA19C6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{489F2F3D-235C-480A-B0DB-7FB02AFEDEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{489F2F3D-235C-480A-B0DB-7FB02AFEDEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{489F2F3D-235C-480A-B0DB-7FB02AFEDEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{489F2F3D-235C-480A-B0DB-7FB02AFEDEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F524B924-51E5-4429-BE85-708F1F3C6BB7}
+	EndGlobalSection
+EndGlobal
